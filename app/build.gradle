@@ -70,6 +70,8 @@ dependencies {
 
     // Koin for Android
     implementation "io.insert-koin:koin-androidx-compose:3.4.3"
+    // ml kit
+    implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
     //implementation project(path: ':data')
     //implementation project(path: ':domain')
 }

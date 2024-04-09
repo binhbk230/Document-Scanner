@@ -1,11 +1,20 @@
 package com.bstudio.composestarted.ui.screen
 
+import android.app.Activity.RESULT_OK
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.viewModelScope
 import com.bstudio.composestarted.base.BaseViewModel
+import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions
+import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.RESULT_FORMAT_JPEG
+import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.RESULT_FORMAT_PDF
+import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.SCANNER_MODE_FULL
+import com.google.mlkit.vision.documentscanner.GmsDocumentScanning
+import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class HomeScreenViewModel: BaseViewModel<HomeScreenState, HomeScreenEvent>(HomeScreenState.Idle) {
+
 
     override fun processUiEvent(event: HomeScreenEvent) {
         viewModelScope.launch {
